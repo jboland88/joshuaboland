@@ -1,0 +1,30 @@
+/* Flexbox based grid system */
+
+.row
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: flex-start
+	align-items: flex-start
+	align-content: flex-start
+	max-width: 1200px
+	margin: 0 auto
+
+//Base styles for the columns
+[class^='col-']
+	flex: 0 0 100%
+	padding: 0 0.875em
+
+//breakpoint-speciifc columns
+@each $label, $size in $breakpoints
+	@media screen and (min-width: #{$size})
+		@for $i from 1 through $grid-columns
+			.col-#{$label}-#{$i}
+				flex: 0
+				flex-basis: $i/$grid-columns * 100%
+
+//columns that work at all sizes
+@for $i from 1 through $grid-columns
+	.col-#{$i}
+		flex: 0
+		flex-basis: $i/$grid-columns * 100%

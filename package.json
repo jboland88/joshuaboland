@@ -1,0 +1,10 @@
+{
+  "name": "jboland",
+  "version": "0.0.2",
+  "description": "Josh Boland's Website",
+  "author": "Josh Boland <jboland@g.clemson.edu>",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.0.0"
+  }
+}
